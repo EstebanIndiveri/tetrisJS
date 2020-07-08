@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded',()=>{
     let squares=Array.from(document.querySelectorAll('.grid div'));
     const grid=document.querySelector('.grid');
     const scoreDisplay=document.querySelector('#score');
-    const startBtn=document.querySelector('#start-button');
+    const startBtn=document.querySelector('.start-button');
+    const reStartBtn=document.querySelector('.start');
     const width=10;
     let nextRandom=0;
     let timerId;
@@ -192,6 +193,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             }else{
                 draw();
                 timerId=setInterval(moveDown,1000);
+                // if(score)
                 nextRandom=Math.floor(Math.random()*theTetrominoes.length);
                 displayShape();
             }
@@ -205,6 +207,10 @@ document.addEventListener('DOMContentLoaded',()=>{
                 if(row.every(index=>squares[index].classList.contains('taken'))){
                     score+=10;
                     scoreDisplay.innerHTML=score;
+                    if(score>10){
+                        timerId=setInterval(moveDown,200);
+                        console.log('adle')
+                    }
                     row.forEach(index=>{
                         squares[index].classList.remove('taken');
                         squares[index].classList.remove('tetromino');
@@ -224,5 +230,9 @@ document.addEventListener('DOMContentLoaded',()=>{
                 clearInterval(timerId);
             }
         }
+
+        reStartBtn.addEventListener('click',()=>{
+            window.location.reload();
+        })
 })
 

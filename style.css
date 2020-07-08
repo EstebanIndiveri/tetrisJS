@@ -1,6 +1,15 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    background-color: rgb(235, 214, 236);
+    overflow: hidden;
+}
 .container{
     display: flex;
-
+    flex:1;
+    justify-content: center;
 }
 
 .grid{
@@ -8,7 +17,11 @@
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: yellow;
+    /* background-color: yellow; */
+    /* margin:0 auto; */
+    box-sizing: unset;
+    border: 1px solid rgb(206, 182, 207);
+    padding: 2px;
 }
 
 .grid div{
@@ -17,6 +30,12 @@
 }
 .tetromino{
     background-color: blue;
+    /* -webkit-box-shadow:inset 10px 10px 30px 1px #E6E6E6;
+    box-shadow:inset 10px 10px 30px 1px #E6E6E6; */
+    
+    -webkit-box-shadow:inset 4px 4px 6px 1px #fcfcfc8a;
+    box-shadow: inset 4px 4px 6px 1px #fcfcfc8a;
+
 }
 .mini-grid{
     margin-left: 50px;
@@ -24,9 +43,66 @@
     height: 80px;
     display:flex;
     flex-wrap: wrap;
-    background-color: yellow;
+    /* background-color: yellow; */
+    border: 1px solid rgb(206, 182, 207);
+    padding: 2px;
+    box-sizing: unset;
 }
 .mini-grid div{
     height: 20px;
     width: 20px;
+}
+h3{
+    font-size: 30px;
+    color:white;
+
+}
+#score{
+    font-size: 40px;
+    color:white;
+}
+.yourScore{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 5px;
+    margin:0;
+    padding:0;
+    color:white;
+}
+
+.start-button{
+    background-color:rgb(206, 182, 207);
+    color:white;
+    border:none;
+    border-radius: 10px;
+    padding: .7rem;
+    margin-bottom: .5rem;
+    outline: none;
+    transition: all 300ms;
+    display: flex;
+    text-transform: uppercase;
+}
+.start-button:hover{
+    background-color: rgb(186, 158, 187);
+    cursor: pointer;
+}
+.buttons{
+    display: flex;
+}
+.start{
+    margin-left: 10px;
+    text-transform: uppercase;
+}
+.footer{
+    color:white;
+    font-size: 12px;
+    background-color: rgb(186, 158, 187);
+    position: absolute;
+    width: 100%;
+  bottom: 0;
 }
