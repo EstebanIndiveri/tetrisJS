@@ -208,57 +208,16 @@ document.addEventListener('DOMContentLoaded',()=>{
                     score+=10;
                     scoreDisplay.innerHTML=score;
                     if(score>10){
-                        timerId=setInterval(moveDown,200);
-                        console.log('adle')
+                        timerId=setInterval(moveDown,950);
+                        console.log('lvl2')
                     }
-                    switch (score) {
-                        case 10:
-                        timerId=setInterval(moveDown,980);
-                        console.log('lvl 2');
-                            break;
-                        case 20:
-                            timerId=setInterval(moveDown,950);
-                        console.log('lvl 3');
-
-                        break;
-
-                        case 30:
-                            timerId=setInterval(moveDown,900);
-                        console.log('lvl 4');
-
-                        break;
-                    
-                        case 40:
-                            timerId=setInterval(moveDown,880);
-                        console.log('lvl 5');
-
-                        break;
-
-                        case 50:
-                            timerId=setInterval(moveDown,850);
-                        console.log('lvl 6');
-
-                        break;
-
-                        case 60:
-                            timerId=setInterval(moveDown,800);
-                        console.log('lvl 7');
-
-                        break;
-
-                        case 70:
-                            timerId=setInterval(moveDown,780);
-                        console.log('lvl 8');
-
-                        break;
-                        case 80:
-                            timerId=setInterval(moveDown,750);
-                        console.log('lvl 9');
-
-                        break;
-                        default:
-                            timerId=setInterval(moveDown,1000);
-                            break;
+                    if(score>50){
+                        timerId=setInterval(moveDown,900);
+                        console.log('lvl3')
+                    }
+                    if(score>80){
+                        timerId=setInterval(moveDown,890);
+                        console.log('lvl4')
                     }
                     row.forEach(index=>{
                         squares[index].classList.remove('taken');
